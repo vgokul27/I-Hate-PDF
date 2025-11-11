@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-950 text-white">
         <Navbar />
-        <div className="pt-20 flex-grow">
+        <div className="pt-24 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

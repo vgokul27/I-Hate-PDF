@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Menu } from "lucide-react";
+import { X, Menu, HeartCrack } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -17,10 +17,10 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         <Link
           to="/"
-          className="text-2xl font-bold text-green-400 hover:text-green-300 transition"
+          className="text-2xl font-bold text-green-400 hover:text-green-300 transition flex items-center gap-2"
           onClick={() => setIsOpen(false)}
         >
-          I Hate PDF
+          I Hate PDF <HeartCrack className="text-green-400" size={28} />
         </Link>
 
         {/* Desktop Links */}
@@ -68,8 +68,8 @@ const Navbar = () => {
             >
               {/* Close Button */}
               <div className="flex justify-between items-center mb-8">
-                <div className="text-2xl font-bold text-green-400">
-                  I Hate PDF
+                <div className="text-2xl font-bold text-green-400 flex items-center gap-2">
+                  I <HeartCrack className="text-green-400" size={28} /> PDF
                 </div>
                 <button className="text-2xl" onClick={() => setIsOpen(false)}>
                   <X />

@@ -1,6 +1,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FilePlus, FileMinus, FileText, Scissors } from "lucide-react";
+import {
+  FilePlus,
+  FileMinus,
+  FileText,
+  Scissors,
+  Minimize2,
+  FileImage,
+  ImageIcon,
+  Code,
+  FolderTree,
+  PenTool,
+  FileSignature,
+  Sheet,
+  Lock,
+} from "lucide-react";
 
 const tools = [
   {
@@ -26,6 +40,69 @@ const tools = [
     desc: "Easily extract or split specific pages from your PDFs.",
     icon: <Scissors size={40} />,
     color: "from-yellow-400 to-orange-500",
+  },
+];
+
+const upcomingFeatures = [
+  {
+    title: "Compress PDF",
+    desc: "Reduce PDF file size while maintaining quality.",
+    icon: <Minimize2 size={40} />,
+  },
+  {
+    title: "PDF to PowerPoint",
+    desc: "Convert PDF documents to editable PowerPoint presentations.",
+    icon: <FileImage size={40} />,
+  },
+  {
+    title: "PowerPoint to PDF",
+    desc: "Transform your presentations into PDF format.",
+    icon: <FileImage size={40} />,
+  },
+  {
+    title: "PDF to Excel",
+    desc: "Extract tables and data from PDFs to Excel spreadsheets.",
+    icon: <Sheet size={40} />,
+  },
+  {
+    title: "Excel to PDF",
+    desc: "Convert your Excel spreadsheets into PDF documents.",
+    icon: <Sheet size={40} />,
+  },
+  {
+    title: "Edit PDF",
+    desc: "Modify text, images, and content in your PDF files.",
+    icon: <PenTool size={40} />,
+  },
+  {
+    title: "Sign PDF",
+    desc: "Digitally sign your PDF documents with ease.",
+    icon: <FileSignature size={40} />,
+  },
+  {
+    title: "PDF to JPG",
+    desc: "Convert PDF pages into high-quality JPG images.",
+    icon: <FileImage size={40} />,
+  },
+  {
+    title: "JPG to PDF",
+    desc: "Combine multiple images into a single PDF file.",
+    icon: <ImageIcon size={40} />,
+  },
+  {
+    title: "HTML to PDF",
+    desc: "Convert web pages and HTML content to PDF format.",
+    icon: <Code size={40} />,
+  },
+  {
+    title: "Organize PDF",
+    desc: "Rearrange, rotate, and manage your PDF pages.",
+    icon: <FolderTree size={40} />,
+  },
+  {
+    title: "Protect PDF",
+    desc: "Add password protection and security to your PDF files.",
+    icon: <Lock size={40} />,
   },
 ];
 
@@ -94,6 +171,58 @@ const Home = () => {
             </div>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Upcoming Features Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full max-w-6xl mt-20 mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-400">
+          Upcoming Features
+        </h2>
+        <p className="text-gray-400 text-lg mb-12">
+          Stay tuned for these exciting new tools coming soon!
+        </p>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.1 },
+            },
+          }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {upcomingFeatures.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ scale: 1.06 }}
+              transition={{ type: "tween", duration: 0.1, ease: "easeOut" }}
+              className="bg-gray-900 rounded-2xl p-6 shadow-lg cursor-pointer relative overflow-hidden group border border-transparent hover:border-green-400 transition-all duration-200"
+            >
+              <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                <div className="text-green-400">{feature.icon}</div>
+                <h3 className="text-2xl font-semibold">{feature.title}</h3>
+                <p className="text-gray-400 group-hover:text-white transition-colors duration-200 text-sm">
+                  {feature.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );

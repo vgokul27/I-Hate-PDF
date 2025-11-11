@@ -69,6 +69,9 @@ const Footer = () => {
             <li className="hover:text-green-400 transition cursor-pointer">
               Education
             </li>
+            <li className="hover:text-green-400 transition cursor-pointer">
+              Personal
+            </li>
           </ul>
         </div>
 
@@ -114,22 +117,28 @@ const Footer = () => {
 
         {/* App store buttons column */}
         <div className="flex flex-col items-end space-y-4">
-          <div className="w-full flex flex-col items-end space-y-3">
-            <a className="w-32 md:w-40 border border-gray-700 rounded-lg px-4 py-2 flex items-center space-x-3 text-sm hover:border-green-400 transition cursor-pointer">
-              <span className="w-6 h-6 bg-gray-700 rounded-sm" />
+          <div className="w-full flex flex-col space-y-3">
+            <a className="w-24 md:w-40 border border-gray-700 rounded-lg px-2 md:px-4 py-1 md:py-2 flex items-center space-x-2 md:space-x-3 text-sm hover:border-green-400 transition cursor-pointer">
+              <span className="w-4 h-4 md:w-6 md:h-6 bg-gray-700 rounded-sm" />
               <span className="text-left">
-                <div className="text-xs text-gray-400">GET IT ON</div>
-                <div className="text-xs font-semibold text-white">
+                <div className="text-[10px] md:text-xs text-gray-400">
+                  GET IT ON
+                </div>
+                <div className="text-[10px] md:text-xs font-semibold text-white">
                   Google Play
                 </div>
               </span>
             </a>
 
-            <a className="w-32 md:w-40 border border-gray-700 rounded-lg px-4 py-2 flex items-center space-x-3 text-sm hover:border-green-400 transition cursor-pointer">
-              <span className="w-6 h-6 bg-gray-700 rounded-sm" />
+            <a className="w-24 md:w-40 border border-gray-700 rounded-lg px-2 md:px-4 py-1 md:py-2 flex items-center space-x-2 md:space-x-3 text-sm hover:border-green-400 transition cursor-pointer">
+              <span className="w-4 h-4 md:w-6 md:h-6 bg-gray-700 rounded-sm" />
               <span className="text-left">
-                <div className="text-xs text-gray-400">GET IT ON</div>
-                <div className="font-semibold text-white">App Store</div>
+                <div className="text-[10px] md:text-xs text-gray-400">
+                  GET IT ON
+                </div>
+                <div className="text-[10px] md:text-xs font-semibold text-white">
+                  App Store
+                </div>
               </span>
             </a>
           </div>
