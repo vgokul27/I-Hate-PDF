@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const links = ["Merge PDF", "PDF to Word", "Word to PDF", "About"];
+  const links = [
+    { name: "Merge PDF", path: "/merge-pdf" },
+    { name: "PDF to Word", path: "/pdf-to-word" },
+    { name: "Word to PDF", path: "/word-to-pdf" },
+    { name: "About", path: "/about" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white px-6 py-4 shadow-md z-50">
@@ -22,10 +27,10 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-8 text-lg">
           {links.map((link) => (
             <li
-              key={link}
+              key={link.name}
               className="hover:text-green-400 transition duration-300 cursor-pointer"
             >
-              {link}
+              <Link to={link.path}>{link.name}</Link>
             </li>
           ))}
         </ul>
@@ -50,7 +55,7 @@ const Navbar = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="fixed inset-0 bg-black z-40"
-              onClick={() => setIsOpen(false)} // closes sidebar on outside click
+              onClick={() => setIsOpen(false)}
             ></motion.div>
 
             {/* Sidebar Panel */}
@@ -75,12 +80,12 @@ const Navbar = () => {
               <ul className="space-y-6 text-lg">
                 {links.map((link) => (
                   <motion.li
-                    key={link}
+                    key={link.name}
                     whileHover={{ scale: 1.1, color: "#22c55e" }}
                     className="cursor-pointer"
-                    onClick={() => setIsOpen(false)} // also closes when clicking a link
+                    onClick={() => setIsOpen(false)}
                   >
-                    {link}
+                    <Link to={link.path}>{link.name}</Link>
                   </motion.li>
                 ))}
               </ul>

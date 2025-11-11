@@ -30,7 +30,8 @@ const tools = [
 ];
 
 const Home = () => {
-  const [hovered, setHovered] = useState(null);
+  // hovered state removed — we now use a simple hover-border via Tailwind
+  const [_, setUnused] = useState(null);
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-950 text-white px-6">
@@ -79,20 +80,11 @@ const Home = () => {
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
             }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(null)}
-            className="bg-gray-900 rounded-2xl p-6 shadow-lg cursor-pointer relative overflow-hidden group"
+            // smooth zoom on hover
+            whileHover={{ scale: 1.06 }}
+            transition={{ type: "tween", duration: 0.1, ease: "easeOut" }}
+            className="bg-gray-900 rounded-2xl p-6 shadow-lg cursor-pointer relative overflow-hidden group border border-transparent hover:border-green-400 transition-all duration-200"
           >
-            {/* Animated background gradient */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: hovered === index ? 1 : 0 }}
-              transition={{ duration: 0.4 }}
-              className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-20 blur-xl`}
-            ></motion.div>
-
             <div className="relative z-10 flex flex-col items-center text-center space-y-4">
               <div className="text-green-400">{tool.icon}</div>
               <h3 className="text-2xl font-semibold">{tool.title}</h3>
