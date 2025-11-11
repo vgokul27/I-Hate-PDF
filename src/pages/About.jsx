@@ -74,7 +74,7 @@ const About = () => {
           <p className="text-gray-300">
             We prioritize privacy: files are processed securely and retained
             only as long as necessary. For detailed info see our{" "}
-            <Link to="/privacy" className="text-green-400 underline">
+            <Link to="/privacy" className="text-green-400">
               Privacy Policy
             </Link>
             .
@@ -86,7 +86,7 @@ const About = () => {
           <p className="text-gray-300">
             Small, focused team committed to great UX and reliable performance.
             We welcome feedback and contributions — visit our{" "}
-            <Link to="/contact" className="text-green-400 underline">
+            <Link to="/contact" className="text-green-400">
               Contact page
             </Link>
             .

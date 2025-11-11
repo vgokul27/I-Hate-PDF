@@ -165,7 +165,7 @@ const Footer = () => {
 
           {/* Copyright right */}
           <div className="text-sm text-gray-400">
-            © {new Date().getFullYear()} I Hate PDF — All Rights Reserved.
+            © {new Date().getFullYear()} I Hate PDF — All Rights Reserved — Built by GOKUL
           </div>
         </div>
       </div>

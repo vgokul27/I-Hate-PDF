@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "/src/components/Navbar";
 import Home from "/src/pages/Home";
 import About from "/src/pages/About";
+import PdfToWord from "/src/pages/PdfToWord";
+import WordToPdf from "/src/pages/WordToPdf";
 import Footer from "./components/Footer";
 
 function App() {
@@ -9,13 +11,13 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-950 text-white">
         <Navbar />
-        <div className="pt-24 flex-grow">
+        <div className=" flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/pdf-to-word" element={<PdfToWord />} />
+            <Route path="/word-to-pdf" element={<WordToPdf />} />
             <Route path="/merge-pdf" element={<div>Merge PDF Page</div>} />
-            <Route path="/pdf-to-word" element={<div>PDF to Word Page</div>} />
-            <Route path="/word-to-pdf" element={<div>Word to PDF Page</div>} />
           </Routes>
         </div>
         <Footer />

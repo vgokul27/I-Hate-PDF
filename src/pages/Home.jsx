@@ -111,7 +111,7 @@ const Home = () => {
   const [_, setUnused] = useState(null);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-950 text-white px-6">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-950 text-white px-6 pt-24">
       {/* Hero Text */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}

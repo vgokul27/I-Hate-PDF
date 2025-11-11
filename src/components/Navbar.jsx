@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const links = [
+    { name: "Home", path: "/" },
     { name: "Merge PDF", path: "/merge-pdf" },
     { name: "PDF to Word", path: "/pdf-to-word" },
     { name: "Word to PDF", path: "/word-to-pdf" },
@@ -24,7 +25,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 text-lg">
+        <ul className="hidden md:flex space-x-8 text-md font-semibold">
           {links.map((link) => (
             <li
               key={link.name}
