@@ -54,7 +54,7 @@ const WordToPdf = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white pt-28 px-6">
+    <div className="min-h-screen bg-gray-950 text-white pt-28 px-6 pb-8">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <motion.div
@@ -172,7 +172,6 @@ const WordToPdf = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-12"
         >
           <h2 className="text-2xl font-bold text-green-400 mb-6 text-center">
             How It Works
@@ -206,48 +205,6 @@ const WordToPdf = () => {
               </p>
             </div>
           </div>
-        </motion.div>
-
-        {/* Additional Info Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gray-900 rounded-xl p-6 mb-12"
-        >
-          <h2 className="text-xl font-bold text-green-400 mb-4">
-            Why Convert Word to PDF?
-          </h2>
-          <ul className="space-y-3 text-gray-300">
-            <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-              <span>
-                <strong>Universal Compatibility:</strong> PDFs can be opened on
-                any device without formatting issues
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-              <span>
-                <strong>Professional Appearance:</strong> Maintain your
-                document's professional look across all platforms
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-              <span>
-                <strong>Secure Sharing:</strong> Protect your content from
-                accidental edits and preserve original formatting
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-              <span>
-                <strong>Smaller File Size:</strong> PDFs are often more compact
-                than Word documents
-              </span>
-            </li>
-          </ul>
         </motion.div>
       </div>
     </div>

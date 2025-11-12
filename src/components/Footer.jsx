@@ -6,6 +6,8 @@ import {
   Facebook,
   Linkedin,
   Globe,
+  Apple,
+  PlaySquare,
 } from "lucide-react";
 
 const Footer = () => {
@@ -14,9 +16,9 @@ const Footer = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-gray-900 text-gray-300 pt-16 pb-8"
+      className="bg-gray-900 text-gray-300 pt-16 pb-8 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-3 sm:grid-cols-6 gap-8 text-left">
+      <div className="max-w-6xl mx-auto px-10 sm:px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 text-left">
         {/* Columns: Product, Resources, Solutions, Legal, Company */}
         <div className="space-y-3">
           <h4 className="text-sm font-semibold text-white tracking-wider">
@@ -116,56 +118,55 @@ const Footer = () => {
         </div>
 
         {/* App store buttons column */}
-        <div className="flex flex-col items-end space-y-4">
-          <div className="w-full flex flex-col space-y-3">
-            <a className="w-24 md:w-40 border border-gray-700 rounded-lg px-2 md:px-4 py-1 md:py-2 flex items-center space-x-2 md:space-x-3 text-sm hover:border-green-400 transition cursor-pointer">
-              <span className="w-4 h-4 md:w-6 md:h-6 bg-gray-700 rounded-sm" />
-              <span className="text-left">
-                <div className="text-[10px] md:text-xs text-gray-400">
-                  GET IT ON
-                </div>
-                <div className="text-[10px] md:text-xs font-semibold text-white">
-                  Google Play
-                </div>
-              </span>
-            </a>
+        <div className="flex flex-col items-start sm:items-end space-y-3">
+          <a className="w-28 sm:w-32 md:w-40 border border-gray-700 rounded-lg px-2 md:px-4 py-1 md:py-2 flex items-center space-x-2 md:space-x-3 hover:border-green-400 transition cursor-pointer">
+            <PlaySquare className="w-4 h-4 md:w-6 md:h-6 text-green-400 flex-shrink-0" />
+            <span className="text-left">
+              <div className="text-[10px] md:text-xs text-gray-400 whitespace-nowrap">
+                Get it on
+              </div>
+              <div className="text-[10px] md:text-xs font-semibold text-white whitespace-nowrap">
+                Google Play
+              </div>
+            </span>
+          </a>
 
-            <a className="w-24 md:w-40 border border-gray-700 rounded-lg px-2 md:px-4 py-1 md:py-2 flex items-center space-x-2 md:space-x-3 text-sm hover:border-green-400 transition cursor-pointer">
-              <span className="w-4 h-4 md:w-6 md:h-6 bg-gray-700 rounded-sm" />
-              <span className="text-left">
-                <div className="text-[10px] md:text-xs text-gray-400">
-                  GET IT ON
-                </div>
-                <div className="text-[10px] md:text-xs font-semibold text-white">
-                  App Store
-                </div>
-              </span>
-            </a>
-          </div>
+          <a className="w-28 sm:w-32 md:w-40 border border-gray-700 rounded-lg px-2 md:px-4 py-1 md:py-2 flex items-center space-x-2 md:space-x-3 hover:border-green-400 transition cursor-pointer">
+            <Apple className="w-4 h-4 md:w-6 md:h-6 text-green-400 flex-shrink-0" />
+            <span className="text-left">
+              <div className="text-[10px] md:text-xs text-gray-400 whitespace-nowrap">
+                Download on the
+              </div>
+              <div className="text-[10px] md:text-xs font-semibold text-white whitespace-nowrap">
+                App Store
+              </div>
+            </span>
+          </a>
         </div>
       </div>
 
       <div className="border-t border-gray-700 mt-10 pt-6">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-6 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Language selector */}
           <div className="flex items-center space-x-2">
-            <button className="border border-gray-700 rounded-lg px-4 py-2 flex items-center space-x-2 text-sm hover:border-green-400 transition">
+            <button className="border border-gray-700 rounded-lg px-3 sm:px-4 py-2 flex items-center space-x-2 text-sm hover:border-green-400 transition">
               <Globe className="w-4 h-4 text-gray-300" />
               <span className="text-gray-300 font-medium">English</span>
             </button>
           </div>
 
           {/* Social icons center */}
-          <div className="flex items-center space-x-6 text-gray-300 cursor-pointer">
-            <Twitter className="w-6 h-6 hover:text-green-400 transition" />
-            <Facebook className="w-6 h-6 hover:text-green-400 transition" />
-            <Linkedin className="w-6 h-6 hover:text-green-400 transition" />
-            <Instagram className="w-6 h-6 hover:text-green-400 transition" />
+          <div className="flex items-center space-x-4 sm:space-x-6 text-gray-300">
+            <Twitter className="w-5 h-5 sm:w-6 sm:h-6 hover:text-green-400 transition cursor-pointer" />
+            <Facebook className="w-5 h-5 sm:w-6 sm:h-6 hover:text-green-400 transition cursor-pointer" />
+            <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 hover:text-green-400 transition cursor-pointer" />
+            <Instagram className="w-5 h-5 sm:w-6 sm:h-6 hover:text-green-400 transition cursor-pointer" />
           </div>
 
-          {/* Copyright right */}
-          <div className="text-sm text-gray-400">
-            © {new Date().getFullYear()} I Hate PDF — All Rights Reserved — Built by GOKUL
+          {/* Copyright */}
+          <div className="text-xs sm:text-sm text-gray-400 text-center md:text-right">
+            © {new Date().getFullYear()} I Hate PDF — All Rights Reserved —
+            Built by GOKUL
           </div>
         </div>
       </div>

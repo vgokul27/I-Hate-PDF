@@ -34,7 +34,7 @@ const features = [
 
 const About = () => {
   return (
-    <section className="min-h-screen bg-gray-950 text-white px-6 py-16">
+    <section className="min-h-screen bg-gray-950 text-white px-6 py-16 pt-28">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FilePlus,
   FileMinus,
@@ -22,24 +23,28 @@ const tools = [
     desc: "Combine multiple PDFs into one seamless document.",
     icon: <FilePlus size={40} />,
     color: "from-green-400 to-emerald-500",
+    path: "/merge-pdf",
   },
   {
     title: "PDF to Word",
     desc: "Convert your PDF files into editable Word documents.",
     icon: <FileText size={40} />,
     color: "from-blue-400 to-indigo-500",
+    path: "/pdf-to-word",
   },
   {
     title: "Word to PDF",
     desc: "Turn your Word documents into professional PDFs instantly.",
     icon: <FileMinus size={40} />,
     color: "from-pink-400 to-rose-500",
+    path: "/word-to-pdf",
   },
   {
     title: "Split PDF",
     desc: "Easily extract or split specific pages from your PDFs.",
     icon: <Scissors size={40} />,
     color: "from-yellow-400 to-orange-500",
+    path: "/split-pdf",
   },
 ];
 
@@ -107,7 +112,7 @@ const upcomingFeatures = [
 ];
 
 const Home = () => {
-  // hovered state removed — we now use a simple hover-border via Tailwind
+  const navigate = useNavigate();
   const [_, setUnused] = useState(null);
 
   return (
@@ -157,9 +162,9 @@ const Home = () => {
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
             }}
-            // smooth zoom on hover
             whileHover={{ scale: 1.06 }}
             transition={{ type: "tween", duration: 0.1, ease: "easeOut" }}
+            onClick={() => navigate(tool.path)}
             className="bg-gray-900 rounded-2xl p-6 shadow-lg cursor-pointer relative overflow-hidden group border border-transparent hover:border-green-400 transition-all duration-200"
           >
             <div className="relative z-10 flex flex-col items-center text-center space-y-4">

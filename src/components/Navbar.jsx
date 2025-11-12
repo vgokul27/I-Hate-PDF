@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu, HeartCrack } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
   const links = [
     { name: "Home", path: "/" },
     { name: "Merge PDF", path: "/merge-pdf" },
     { name: "PDF to Word", path: "/pdf-to-word" },
     { name: "Word to PDF", path: "/word-to-pdf" },
+    { name: "Split PDF", path: "/split-pdf" },
     { name: "About", path: "/about" },
   ];
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white px-6 py-4 shadow-md z-50">
@@ -29,7 +36,11 @@ const Navbar = () => {
           {links.map((link) => (
             <li
               key={link.name}
-              className="hover:text-green-400 transition duration-300 cursor-pointer"
+              className={`transition duration-300 cursor-pointer ${
+                isActive(link.path)
+                  ? "text-green-400"
+                  : "text-white hover:text-green-400"
+              }`}
             >
               <Link to={link.path}>{link.name}</Link>
             </li>
@@ -70,7 +81,7 @@ const Navbar = () => {
               {/* Close Button */}
               <div className="flex justify-between items-center mb-8">
                 <div className="text-2xl font-bold text-green-400 flex items-center gap-2">
-                  I <HeartCrack className="text-green-400" size={28} /> PDF
+                  I Hate PDF <HeartCrack className="text-green-400" size={28} />
                 </div>
                 <button className="text-2xl" onClick={() => setIsOpen(false)}>
                   <X />
@@ -83,7 +94,9 @@ const Navbar = () => {
                   <motion.li
                     key={link.name}
                     whileHover={{ scale: 1.1, color: "#22c55e" }}
-                    className="cursor-pointer"
+                    className={`cursor-pointer ${
+                      isActive(link.path) ? "text-green-400" : "text-white"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     <Link to={link.path}>{link.name}</Link>
