@@ -63,8 +63,10 @@ const PdfToWord = () => {
     const formData = new FormData();
     formData.append("pdf", selectedFile);
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
     try {
-      const response = await fetch("http://localhost:5000/api/pdf-to-word", {
+      const response = await fetch(`${API_URL}/api/pdf-to-word`, {
         method: "POST",
         body: formData,
       });

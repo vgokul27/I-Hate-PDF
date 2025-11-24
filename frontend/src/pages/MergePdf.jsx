@@ -111,8 +111,10 @@ const MergePdf = () => {
       formData.append("files", file);
     });
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
     try {
-      const response = await fetch("http://localhost:5000/api/merge-pdf", {
+      const response = await fetch(`${API_URL}/api/merge-pdf`, {
         method: "POST",
         body: formData,
       });
