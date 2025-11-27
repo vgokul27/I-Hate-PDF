@@ -298,7 +298,7 @@ const MergePdf = () => {
                     <div className="bg-green-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
                       {index + 1}
                     </div>
-                    <span className="text-gray-300 truncate">{file.name}</span>
+                    <span className="text-xs md:text-sm text-gray-300 truncate max-w-[50px] md:max-w-[400px]">{file.name}</span>
                     <span className="text-gray-500 text-sm">
                       ({(file.size / 1024).toFixed(1)} KB)
                     </span>

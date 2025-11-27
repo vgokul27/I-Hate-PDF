@@ -192,7 +192,7 @@ const WordToPdf = () => {
                 }`}
               />
             )}
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-xs lg:text-md font-semibold mb-2">
               {isConverting
                 ? "Converting your Word document..."
                 : selectedFile
@@ -262,7 +262,7 @@ const WordToPdf = () => {
                   Conversion Complete!
                 </h3>
               </div>
-              <p className="text-gray-300 text-center mb-6">
+              <p className="text-sm lg:text-md text-gray-300 text-center mb-6">
                 Your Word document has been successfully converted to PDF
                 format. Click the button below to download your file.
               </p>
@@ -271,7 +271,7 @@ const WordToPdf = () => {
                   <div className="flex items-center gap-3">
                     <FileText className="w-8 h-8 text-green-400" />
                     <div>
-                      <p className="font-semibold text-white">
+                      <p className="text-xs lg:text-sm font-semibold text-white">
                         {selectedFile.name.replace(/\.(doc|docx)$/, "")}
                         -converted.pdf
                       </p>

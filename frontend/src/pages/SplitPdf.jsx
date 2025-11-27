@@ -192,7 +192,7 @@ const SplitPdf = () => {
                 }`}
               />
             )}
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-xs lg:text-xl font-semibold mb-2">
               {isSplitting
                 ? "Splitting your PDF..."
                 : selectedFile
@@ -222,7 +222,7 @@ const SplitPdf = () => {
                 className="mt-6 flex items-center justify-center gap-2 text-green-400"
               >
                 <CheckCircle className="w-5 h-5" />
-                <span>File selected successfully</span>
+                <span className="text-xs lg:text-lg">File selected successfully</span>
               </motion.div>
             )}
 
@@ -364,7 +364,7 @@ const SplitPdf = () => {
                   Split Complete!
                 </h3>
               </div>
-              <p className="text-gray-300 text-center mb-6">
+              <p className="text-sm lg:text-md text-gray-300 text-center mb-6">
                 Your PDF has been split successfully. Click below to download.
               </p>
               <button

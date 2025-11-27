@@ -178,7 +178,7 @@ const PdfToWord = () => {
                 }`}
               />
             )}
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-xs lg:text-xl font-semibold mb-2">
               {isConverting
                 ? "Converting your PDF..."
                 : selectedFile
@@ -208,7 +208,7 @@ const PdfToWord = () => {
                 className="mt-6 flex items-center justify-center gap-2 text-green-400"
               >
                 <CheckCircle className="w-5 h-5" />
-                <span>File selected successfully</span>
+                <span className="text-xs lg:text-lg">File selected successfully</span>
               </motion.div>
             )}
 
