@@ -74,10 +74,7 @@ const About = () => {
           <p className="text-gray-300">
             We prioritize privacy: files are processed securely and retained
             only as long as necessary. For detailed info see our{" "}
-            <Link to="/privacy" className="text-green-400">
-              Privacy Policy
-            </Link>
-            .
+            <span className="text-green-400">Privacy Policy.</span>
           </p>
 
           <h3 className="text-xl font-semibold flex items-center gap-2">
@@ -86,10 +83,7 @@ const About = () => {
           <p className="text-gray-300">
             Small, focused team committed to great UX and reliable performance.
             We welcome feedback and contributions — visit our{" "}
-            <Link to="/contact" className="text-green-400">
-              Contact page
-            </Link>
-            .
+            <span className="text-green-400">Contact page.</span>
           </p>
         </div>
 
@@ -119,9 +113,7 @@ const About = () => {
               </Link>
               .
             </p>
-            <div
-              className="inline-block bg-green-400 text-gray-900 font-semibold px-5 py-2 rounded-lg shadow cursor-pointer hover:opacity-95 transition"
-            >
+            <div className="inline-block bg-green-400 text-gray-900 font-semibold px-5 py-2 rounded-lg shadow cursor-pointer hover:opacity-95 transition">
               Contact Us
             </div>
           </div>
